@@ -1,0 +1,38 @@
+{
+  "name": "rn-touch-id",
+  "version": "1.0.0",
+  "description": "React Native authentication with the native Touch ID popup. Fork from react-native-touch-id",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint .",
+    "start": "node_modules/react-native/packager/packager.sh",
+    "test": "npm run lint"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naoufal/react-native-touch-id.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "native",
+    "touch-id",
+    "react-component",
+    "react-native-component",
+    "authentication",
+    "auth",
+    "authenticate",
+    "mobile"
+  ],
+  "author": "Tam Nguyen <tabenguyen@gmail.com> (https://github.com/tabenguyen)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tabenguyen/react-native-touch-id/issues"
+  },
+  "homepage": "https://github.com/tabenguyen/react-native-touch-id",
+  "devDependencies": {
+    "eslint": "2.0.0",
+    "eslint-plugin-react": "2.7.1"
+  }
+}

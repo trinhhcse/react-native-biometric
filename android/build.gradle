@@ -1,0 +1,48 @@
+// Inspired by rayronvictor's PR #248 tp react-native-config
+// https://github.com/luggit/react-native-config/pull/248
+
+buildscript {
+  repositories {
+    maven {
+      url 'https://maven.google.com/'
+      name 'Google'
+    }
+    jcenter()
+    google()
+  }
+
+  dependencies {
+    classpath rootProject.ext.has('gradleBuildTools') ? rootProject.ext.gradleBuildTools : 'com.android.tools.build:gradle:3.4.0'
+  }
+}
+
+apply plugin: 'com.android.library'
+
+def _reactNativeVersion = rootProject.ext.has('reactNative') ? rootProject.ext.reactNative : '+'
+def _compileSdkVersion = rootProject.ext.has('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 27
+def _buildToolsVersion = rootProject.ext.has('buildToolsVersion') ? rootProject.ext.buildToolsVersion : '27.0.3'
+def _minSdkVersion = rootProject.ext.has('minSdkVersion') ? rootProject.ext.minSdkVersion : 16
+def _targetSdkVersion = rootProject.ext.has('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 27
+
+android {
+  compileSdkVersion _compileSdkVersion
+  buildToolsVersion _buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion _minSdkVersion
+    targetSdkVersion _targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation "com.facebook.react:react-native:${_reactNativeVersion}"
+}
